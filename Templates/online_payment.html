@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Online Payment - Stationery Hub{% endblock %}
+
+{% block content %}
+<section class="payment-container" style="text-align: center; margin: 0 auto; max-width: 600px;">
+    <h2>Scan the QR Code to Pay</h2>
+    <img src="{{ url_for('static', filename='images/upi_qr.png') }}" alt="QR Code"
+        style="max-width: 300px; margin: 20px auto;">
+    <p>Once the payment is successful, collect your items from the stationery counter.</p>
+</section>
+{% endblock %}

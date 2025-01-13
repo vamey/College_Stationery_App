@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Stationery Hub{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to Stationery Hub</h1>
+    <p>Your one-stop shop for all college stationery needs.</p>
+</section>
+
+<section id="products">
+    <h2>Our Products</h2>
+    <form action="/add_to_cart" method="post">
+        <div class="product-grid">
+            {% for id, product in products.items() %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/' + product['name'].lower() + '.jpg') }}"
+                    alt="{{ product['name'] }}">
+                <h3>{{ product['name'] }}</h3>
+                <p>Price: ₹{{ product['price'] }}</p>
+                <p>Stock: {{ product['quantity'] }}</p>
+                <label for="quantity_{{ id }}">Quantity:</label>
+                <input type="number" id="quantity_{{ id }}" name="quantity_{{ id }}" min="0"
+                    max="{{ product['quantity'] }}" value="0">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="form-actions">
+            <h3><button type="submit" class="btn">Add to Cart</button>
+                <h3>
+        </div>
+    </form>
+</section>
+{% endblock %}

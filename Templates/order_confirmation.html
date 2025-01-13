@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">Stationery Hub</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="confirmation-container">
+            <h2>Order Confirmed!</h2>
+            <p>Payment Method: {{ payment_method }}</p>
+            <p>Pay at the counter and collect your items from the college stationery.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Stationery Hub. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
